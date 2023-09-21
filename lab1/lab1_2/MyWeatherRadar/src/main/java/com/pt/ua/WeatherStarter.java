@@ -4,6 +4,8 @@ import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * demonstrates the use of the IPMA API for weather forecast
@@ -12,6 +14,9 @@ public class WeatherStarter {
 
     //todo: should generalize for a city passed as argument
     private static int cityId = 1010500;
+
+    // Logger
+    private static Logger logger = LogManager.getLogger(WeatherStarter.class);
 
     public static void  main(String[] args ) {
 
@@ -29,12 +34,15 @@ public class WeatherStarter {
         if(args.length > 0) {
             cityId = Integer.parseInt(args[0]);
         }
-
+        
         callSync = service.getForecastForACity(cityId);
+        logger.info(callSync);
 
         try {
             Response<IpmaCityForecast> apiResponse = callSync.execute();
+            logger.info(apiResponse);
             IpmaCityForecast forecast = apiResponse.body();
+            logger.info(forecast);
 
             if (forecast != null) {
                 var firstDay = forecast.getData().listIterator().next();
