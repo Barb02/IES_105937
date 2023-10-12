@@ -27,5 +27,5 @@ Com o docker-compose, para as mudanças terem efeito é necessário fazer down, 
 Usar o comando: mvn install -DskipTests && java -jar target/webapp-0.0.1-SNAPSHOT.jar 
 (barra no guião ta invertida)
 ou
-/mvnw spring-boot:run
+./mvnw spring-boot:run
 

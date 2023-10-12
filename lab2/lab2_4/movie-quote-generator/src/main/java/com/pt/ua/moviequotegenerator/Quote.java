@@ -1,3 +1,3 @@
 package com.pt.ua.moviequotegenerator;
 
-public record Quote {}    
+public record Quote(long id, String quote) {}    
