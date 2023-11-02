@@ -20,3 +20,38 @@ Na instância de UserRepository que foi criada, userRepository.
 
 ### Where is the rule for the “not empty” email address defined?
 É definida na classe User, ou seja, na camada do domínio.
+
+# 3.2 
+
+## Teste da API:
+### createUser
+curl --header "Content-Type: application/json"
+--request POST
+--data '{"name":"joao","email":"joao@ua.pt"}'
+localhost:8080/api/employees
+
+Response: {"id":1,"name":"joao","email":"joao@ua.pt"}
+
+### getAllUsers
+curl localhost:8080/api/employees
+
+Response: {"id":1,"name":"joao","email":"joao@ua.pt"}
+
+
+### getUser
+curl localhost:8080/api/employees/1
+
+Response: {"id":1,"name":"joao","email":"joao@ua.pt"}
+
+### updateUser
+curl --header "Content-Type: application/json" \
+--request PUT \
+--data '{"name":"joao","email":"notjoao@gmail.com"}' \
+localhost:8080/api/employees/1
+
+Response: {"id":1,"name":"joao","email":"notjoao@gmail.com"}
+
+### deleteUser
+curl -X DELETE localhost:8080/api/employees/1
+
+Response: User successfully deleted!
