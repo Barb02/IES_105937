@@ -25,9 +25,9 @@ Na instância de UserRepository que foi criada, userRepository.
 
 ## Teste da API:
 ### createUser
-curl --header "Content-Type: application/json"
---request POST
---data '{"name":"joao","email":"joao@ua.pt"}'
+curl --header "Content-Type: application/json" \
+--request POST \
+--data '{"name":"joao","email":"joao@ua.pt"}' \
 localhost:8080/api/employees
 
 Response: {"id":1,"name":"joao","email":"joao@ua.pt"}

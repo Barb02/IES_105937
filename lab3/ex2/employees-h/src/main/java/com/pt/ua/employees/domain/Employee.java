@@ -1,4 +1,4 @@
-package com.pt.ua.employees;
+package com.pt.ua.employees.domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
