@@ -11,9 +11,9 @@ buildNumber.properties
 .mvn/timing.properties
 .mvn/wrapper/maven-wrapper.jar
 
-## Mac
-.DS_Store
-
+## Volumes
+db/
+m2/
 
 # Intellij and Vscode
 .idea
